@@ -1,6 +1,6 @@
 <?php 
 
 function homepage() {
-    require('templates/homepage.php');
+    require('views/homepage.php');
 }
 ?>
