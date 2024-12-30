@@ -39,8 +39,43 @@ session_start();
         <!-- slideshow -->
     </div>
     <div class="featured-products">
-        <h2>Produit Vedette</h2>
+        <h2 class="featured-h1">Produit Vedette</h2>
+        <!-- product images from MySQL -->
+        <div class="featured-photos">
+            <?php if (!empty($productPhotos)): ?>
+                <?php foreach ($productPhotos as $photo): ?>
+                    <!-- products links -->
+                    <img class="featured-photo" src="<?= htmlspecialchars($photo) ?>" alt="vedette product">
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No product photos available.</p>
+            <?php endif; ?>
+            <!-- Load More photos -->
+            <!-- hover image feature -->
+        </div>
     </div>
+    <div class="bamboo-products">
+        <h2>Produits Bamboo</h2>
+        <div class="products-links">
+            <p>CHAISE</p>
+            <p>CANAPÉ</p>
+        </div>
+        <div class="product-images">
+            <!-- products clicked feature -->
+            <?php if (!empty($productChair)): ?>
+                <?php foreach (array_slice($productChair, 0, 3) as $photo): ?>
+                    <img class="product-photo" src="<?= htmlspecialchars($photo) ?>" alt="produit photo">
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No product photos available.</p>
+            <?php endif; ?>
+        </div>
+
+        <!-- slideshow -->
+    </div>
+    <footer class="footer">
+
+    </footer>
 </body>
 
 </html>
