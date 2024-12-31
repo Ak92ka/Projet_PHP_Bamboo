@@ -20,7 +20,7 @@ session_start();
 <body>
     <div class="header">
         <i class="fa-solid fa-bars icon-hamburger icon-header"></i>
-        <img class="logo icon-header" src="photos/logo.webp" alt="Bamboo logo">
+        <img class="logo icon-header" src="https://raw.githubusercontent.com/Ak92ka/Projet_PHP_Bamboo/refs/heads/main/Bamboo/photos/logo.webp" alt="Bamboo logo">
         <div class="flex-right-header">
             <i class="fa-solid fa-magnifying-glass icon-header"></i>
             <i class="fa-solid fa-cart-shopping icon-header"></i>
@@ -79,7 +79,21 @@ session_start();
         <!-- slideshow -->
     </div>
     <footer class="footer">
-
+        <div footer="container">
+            <!-- form subscription -->
+            <div class="social-media">
+                <!-- p -->
+                <!-- logo -->
+                <!-- logo -->
+                <!-- logo -->
+            </div>
+            <!-- line -->
+        </div>
+        <div class="footer-container-2">
+            <!-- <p> -->
+            <!-- logo -->
+            <!-- <p> -->
+        </div>
     </footer>
 </body>
 

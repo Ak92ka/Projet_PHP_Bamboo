@@ -76,6 +76,7 @@ body {
 .arrow {
   position: absolute;
   font-size: 62px;
+  color: #454541;
 }
 
 .arrow-left {
@@ -130,4 +131,9 @@ body {
   max-width: 285px;
   height: 178px;
   border-radius: 10px;
+}
+
+footer {
+  background-color: #181813;
+  padding: 20px;
 }
