@@ -1,9 +1,33 @@
 body {
   font-family: "inter", sans-serif;
+  margin: 0;
 }
+
 .header {
   background-color: #454541;
-  padding: 28px;
+  padding: 9px 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-header {
+  color: white;
+}
+
+.icon-hamburger {
+  font-size: 19px;
+}
+
+.logo {
+  width: 147px;
+  height: 50px;
+}
+
+.flex-right-header {
+  display: flex;
+  gap: 27px;
+  padding-right: 25px;
 }
 
 .banner {
@@ -19,7 +43,7 @@ body {
 
 .text-banner {
   position: absolute;
-  top: 15%;
+  top: 8%;
   left: 25%;
   text-align: center;
 }
@@ -49,6 +73,21 @@ body {
   font-weight: 600;
 }
 
+.arrow {
+  position: absolute;
+  font-size: 62px;
+}
+
+.arrow-left {
+  top: 26%;
+  left: 3%;
+}
+
+.arrow-right {
+  top: 26%;
+  right: 3%;
+}
+
 .featured-h1 {
   text-align: center;
 }
@@ -62,32 +101,33 @@ body {
 }
 
 .featured-photo {
-    max-width: 230px;
-    height: 280px;
-    border-radius: 10px;
+  max-width: 230px;
+  height: 280px;
+  border-radius: 10px;
 }
 
 .bamboo-products {
-    background-color: #f7f7f7;
-    padding-top: 20px;
-    text-align: center;
+  background-color: #f7f7f7;
+  padding-top: 20px;
+  text-align: center;
+  padding-bottom: 100px;
 }
 
 .products-links {
-    display: flex;
-    justify-content: center;
-    gap: 38px;
-    padding-bottom: 45px;
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  padding-bottom: 45px;
 }
 
 .product-images {
-    display: flex;
-    gap: 35px;
-    justify-content: center;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
 }
 
 .product-photo {
-    max-width: 285px;
-    height: 178px;
-    border-radius: 10px;
+  max-width: 285px;
+  height: 178px;
+  border-radius: 10px;
 }
