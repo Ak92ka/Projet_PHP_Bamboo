@@ -79,20 +79,30 @@ session_start();
         <!-- slideshow -->
     </div>
     <footer class="footer">
-        <div footer="container">
+        <div class="container">
             <!-- form subscription -->
-            <div class="social-media">
-                <!-- p -->
-                <!-- logo -->
-                <!-- logo -->
-                <!-- logo -->
+             <div class="form-newsletter">
+             <form action="/newsletter.php" method="POST">
+                <label class="newsletter-label" for="newsletter">INSCRIVEZ-VOUS À NOTRE NEWSLETTER</label>
+                <input class="newsletter-input" type="email" id="newsletter" name="newsletter" placeholder="Entrez Votre Adresse E-mail Ici" required>
+                <button type="submit" aria-label="S'inscrire à la newsletter">
+                <!-- submit icon -->
+                </button>
+            </form>
+            <div class="vertical-line"></div>
             </div>
-            <!-- line -->
+            <div class="social-media">
+                <p class="social-p">REJOIGNEZ-NOUS SUR</p>
+                <!-- logo Facebook -->
+                <!-- logo Twitter -->
+                <!-- logo Instagram -->
+            </div>
         </div>
+        <hr>
         <div class="footer-container-2">
-            <!-- <p> -->
-            <!-- logo -->
-            <!-- <p> -->
+            <p>POLITIQUE DE TERMES ET CONDITIONS</p>
+            <img src="">
+            <p>2019 Bamboo Tous droits réservés</p>
         </div>
     </footer>
 </body>

@@ -137,3 +137,49 @@ footer {
   background-color: #181813;
   padding: 20px;
 }
+
+.container {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  padding-bottom: 14px;
+}
+
+.form-newsletter {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-label {
+  color: white;
+  font-size: 14px;
+}
+
+.newsletter-input {
+  background-color: #292929;
+  border-radius: 20px;
+  border: 1px solid #292929;
+  padding: 7px 32px 7px 10px;
+  color: white;
+  width: 20%;
+}
+
+.newsletter-input::placeholder {
+  color: white;
+  font-size: 14px;
+}
+
+.vertical-line {
+  border-left: 1.5px solid white;
+  height: 51px;
+}
+
+.social-p {
+  color: white;
+  font-size: 14px;
+}
+
+hr {
+  color: white;
+  margin: 0 -18px;
+}
