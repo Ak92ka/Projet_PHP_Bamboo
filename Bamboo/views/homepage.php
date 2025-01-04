@@ -27,10 +27,14 @@ session_start();
         </div>
     </div>
     <div class="banner">
-        <img class="img-banner" src="https://raw.githubusercontent.com/Ak92ka/Projet_PHP_Bamboo/refs/heads/main/Bamboo/photos/Banner_1_50.webp" alt="beige couch">
+        <img class="img-banner" src="<?= htmlspecialchars($bannerPhoto) ?>" alt="beige couch">
         <!-- icons slideshow -->
-        <i class="fa-solid fa-circle-chevron-right arrow arrow-right"></i>
-        <i class="fa-solid fa-circle-chevron-left arrow arrow-left"></i>
+        <a href="?photoId=<?= $nextPhotoId ?>" aria-label="photo suivant">
+            <i class="fa-solid fa-circle-chevron-right arrow arrow-right"></i>
+        </a>
+        <a href="?photoId=<?= $prevPhotoId ?>">
+            <i class="fa-solid fa-circle-chevron-left arrow arrow-left"></i>
+        </a>
         <div class="text-banner">
             <h1 class="banner-h1">INTÉRIEUR</h1>
             <h2 class="banner-h2">Découvrez la nouvelle gamme intérieure de Bamboo</h2>
@@ -81,27 +85,27 @@ session_start();
     <footer class="footer">
         <div class="container">
             <!-- form subscription -->
-             <div class="form-newsletter">
-             <form action="/newsletter.php" method="POST">
-                <label class="newsletter-label" for="newsletter">INSCRIVEZ-VOUS À NOTRE NEWSLETTER</label>
-                <input class="newsletter-input" type="email" id="newsletter" name="newsletter" placeholder="Entrez Votre Adresse E-mail Ici" required>
-                <button type="submit" aria-label="S'inscrire à la newsletter">
-                <!-- submit icon -->
-                </button>
-            </form>
-            <div class="vertical-line"></div>
+            <div class="form-newsletter">
+                <form action="/newsletter.php" method="POST">
+                    <label class="newsletter-label" for="newsletter">INSCRIVEZ-VOUS À NOTRE NEWSLETTER</label>
+                    <input class="newsletter-input" type="email" id="newsletter" name="newsletter" placeholder="Entrez Votre E-mail" required>
+                    <button class="newsletter-submit" type="submit" aria-label="S'inscrire à la newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+                    <!-- submit icon -->
+                    </button>
+                </form>
+                <div class="vertical-line"></div>
             </div>
             <div class="social-media">
                 <p class="social-p">REJOIGNEZ-NOUS SUR</p>
-                <!-- logo Facebook -->
-                <!-- logo Twitter -->
-                <!-- logo Instagram -->
+                <i class="fa-brands fa-facebook social-links"></i>
+                <i class="fa-brands fa-twitter social-links"></i>
+                <i class="fa-brands fa-instagram social-links"></i>
             </div>
         </div>
         <hr>
         <div class="footer-container-2">
             <p>POLITIQUE DE TERMES ET CONDITIONS</p>
-            <img src="">
+            <img class="logo-footer" src="https://raw.githubusercontent.com/Ak92ka/Projet_PHP_Bamboo/refs/heads/main/Bamboo/photos/Logo-footer.webp" alt="logo footer">
             <p>2019 Bamboo Tous droits réservés</p>
         </div>
     </footer>
