@@ -31,19 +31,19 @@ function getProductPhotobyType($productType) {
 
 }
 
-function getProductPhotobyTypeCouch() {
-    $database = dbConnect();
-    $statement = $database->query(
-        "SELECT product_photo FROM products WHERE product_type='couch'"
-    );
-    $photos = [];
-    while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $photos[] =  $row['product_photo'];
-    }
+// function getProductPhotobyTypeCouch() {
+//     $database = dbConnect();
+//     $statement = $database->query(
+//         "SELECT product_photo FROM products WHERE product_type='couch'"
+//     );
+//     $photos = [];
+//     while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+//         $photos[] =  $row['product_photo'];
+//     }
 
-    return $photos;
+//     return $photos;
 
-}
+// }
 
 
 function dbConnect() {

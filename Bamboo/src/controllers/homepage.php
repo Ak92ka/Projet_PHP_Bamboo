@@ -6,8 +6,9 @@ require_once('src/model/Banner.php');
 
 function homepage() {
     $productPhotos = getProductPhoto();
-    $productChair = getProductPhotobyType("chair"); 
-    $productCouch = getProductPhotobyType("couch"); 
+
+    $productType = isset($_GET['productType']) ? $_GET['productType'] : 'chair';
+    $productPhotoByType = getProductPhotobyType($productType);
 
     $photoId = isset($_GET['photoId']) ? $_GET['photoId'] : 1;
     $bannerPhoto = getPhotoById($photoId);

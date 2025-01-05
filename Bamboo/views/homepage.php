@@ -63,23 +63,22 @@ session_start();
             <!-- hover image feature -->
         </div>
     </div>
-    <div class="bamboo-products">
+    <div id="product-images" class="bamboo-products">
         <h2>Produits Bamboo</h2>
         <div class="products-links">
-            <p>CHAISE</p>
-            <p>CANAPÉ</p>
+            <a href="?productType=chair#product-images" class="<?= $productType === 'chair' ? 'active' : '' ?>">CHAISE</a>
+            <a href="?productType=couch#product-images" class="<?= $productType === 'couch' ? 'active' : '' ?>">CANAPÉ</a>
         </div>
         <div class="product-images">
             <!-- products clicked feature -->
-            <?php if (!empty($productChair)): ?>
-                <?php foreach (array_slice($productChair, 0, 3) as $photo): ?>
+            <?php if (!empty($productPhotoByType)): ?>
+                <?php foreach (array_slice($productPhotoByType, 0, 3) as $photo): ?>
                     <img class="product-photo" src="<?= htmlspecialchars($photo) ?>" alt="produit photo">
                 <?php endforeach; ?>
             <?php else: ?>
                 <p>No product photos available.</p>
             <?php endif; ?>
         </div>
-
         <!-- slideshow -->
     </div>
     <footer class="footer">
