@@ -6,7 +6,7 @@ require_once('src/model/Banner.php');
 
 function homepage() {
     $productPhotos = getProductPhoto();
-
+    
     $productType = isset($_GET['productType']) ? $_GET['productType'] : 'chair';
     $productPhotoByType = getProductPhotobyType($productType);
 
@@ -17,5 +17,5 @@ function homepage() {
     $prevPhotoId = $photoId - 1 < 1 ? count($photos) : $photoId - 1;
 
  
-    require('views/homepage.php');
+    require_once('views/homepage.php');
 }

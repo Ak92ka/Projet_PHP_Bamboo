@@ -52,9 +52,10 @@ session_start();
         <!-- product images from MySQL -->
         <div class="featured-photos">
             <?php if (!empty($productPhotos)): ?>
-                <?php foreach ($productPhotos as $photo): ?>
+                <?php foreach ($productPhotos as $product): ?>
                     <!-- products links -->
-                    <img class="featured-photo" src="<?= htmlspecialchars($photo) ?>" alt="vedette product">
+                    <a href="index.php?productId=<?= htmlspecialchars($product['id']) ?>">
+                        <img class="featured-photo" src="<?= htmlspecialchars($product['photo']) ?>" alt="vedette product"></a>
                 <?php endforeach; ?>
             <?php else: ?>
                 <p>No product photos available.</p>
