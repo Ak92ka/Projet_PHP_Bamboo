@@ -249,3 +249,35 @@ footer p {
   height: 88px;
   width: 88px;
 }
+
+.product-page {
+  display: flex;
+  padding: 47px;
+}
+
+.product-image {
+  width: 332px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.product-image-container {
+  
+}
+
+.product-details-container {
+  padding: 0 78px;
+}
+
+.product-color-p, .product-size-p {
+  font-weight: 600;
+}
+
+.product-color-p span {
+  font-weight: normal; /* Explicitly ensure the span is normal */
+}
+
+.size-box {
+  background-color: #e8e8e8;
+  padding: 2px 4px;
+}

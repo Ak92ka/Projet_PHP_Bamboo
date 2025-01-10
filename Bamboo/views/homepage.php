@@ -20,7 +20,9 @@ session_start();
 <body>
     <div class="header">
         <i class="fa-solid fa-bars icon-hamburger icon-header"></i>
-        <img class="logo icon-header" src="https://raw.githubusercontent.com/Ak92ka/Projet_PHP_Bamboo/refs/heads/main/Bamboo/photos/logo.webp" alt="Bamboo logo">
+        <a href="/index.php">
+            <img class="logo icon-header" src="https://raw.githubusercontent.com/Ak92ka/Projet_PHP_Bamboo/refs/heads/main/Bamboo/photos/logo.webp" alt="Bamboo logo">
+        </a>
         <div class="flex-right-header">
             <i class="fa-solid fa-magnifying-glass icon-header"></i>
             <i class="fa-solid fa-cart-shopping icon-header"></i>

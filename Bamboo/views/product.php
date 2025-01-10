@@ -12,25 +12,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <div class="header">
         <i class="fa-solid fa-bars icon-hamburger icon-header"></i>
-        <img class="logo icon-header" src="https://raw.githubusercontent.com/Ak92ka/Projet_PHP_Bamboo/refs/heads/main/Bamboo/photos/logo.webp" alt="Bamboo logo">
+        <a href="index.php?page=homepage">
+            <img class="logo icon-header" src="https://raw.githubusercontent.com/Ak92ka/Projet_PHP_Bamboo/refs/heads/main/Bamboo/photos/logo.webp" alt="Bamboo logo">
+        </a>
         <div class="flex-right-header">
             <i class="fa-solid fa-magnifying-glass icon-header"></i>
             <i class="fa-solid fa-cart-shopping icon-header"></i>
         </div>
     </div>
     <div class="product-page">
-    <?php if ($productDetails): ?>
-        <h1><?= htmlspecialchars($productDetails['product_name']) ?></h1>
-        <img src="<?= htmlspecialchars($productDetails['product_photo']) ?>" alt="Product photo">
-        <p>Price: $<?= htmlspecialchars($productDetails['product_price']) ?></p>
-        <p>Description: <?= nl2br(htmlspecialchars($productDetails['product_description'])) ?></p>
-    <?php else: ?>
-        <p>Product not found.</p>
-    <?php endif; ?>
-
+        <?php if ($productDetails): ?>
+            <div class="product-image-container">
+                <img class="product-image" src="<?= htmlspecialchars($productDetails['product_photo']) ?>" alt="Product photo">
+            </div>
+            <div class="product-details-container">
+                <h1 class="product-name"><?= htmlspecialchars($productDetails['product_name']) ?></h1>
+                <p>€<?= htmlspecialchars($productDetails['product_price']) ?></p>
+                <p><?= nl2br(htmlspecialchars($productDetails['product_description'])) ?></p>
+                <p class="product-color-p">COULEUR: <span><?= htmlspecialchars($productDetails['product_colors']) ?></span></p>
+                <p class="product-size-p">TAILLE:</p>
+                    <?php if ($productDetails['is_small']): ?>
+                        <span class="size-box">S</span>
+                    <?php endif; ?>
+                    <?php if ($productDetails['is_medium']): ?>
+                        <span class="size-box">M</span>
+                    <?php endif; ?>
+                    <?php if ($productDetails['is_large']): ?>
+                        <span class="size-box">L</span>
+                    <?php endif; ?>
+                <!-- quantity -->
+                <!-- buy button -->
+            </div>
+        <?php else: ?>
+            <p>Product not found.</p>
+        <?php endif; ?>
+    </div>
     <footer class="footer">
         <div class="container">
             <!-- form subscription -->
