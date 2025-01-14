@@ -1,3 +1,25 @@
+<?php
+// Initialize quantity
+session_start();
+if (!isset($_SESSION['quantity'])) {
+    $_SESSION['quantity'] = 1; // Default quantity
+}
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['action'])) {
+        if ($_POST['action'] === 'increment') {
+            $_SESSION['quantity']++;
+        } elseif ($_POST['action'] === 'decrement' && $_SESSION['quantity'] > 1) {
+            $_SESSION['quantity']--;
+        }
+    }
+}
+
+// Get the current quantity
+$quantity = $_SESSION['quantity'];
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -35,17 +57,27 @@
                 <p><?= nl2br(htmlspecialchars($productDetails['product_description'])) ?></p>
                 <p class="product-color-p">COULEUR: <span><?= htmlspecialchars($productDetails['product_colors']) ?></span></p>
                 <p class="product-size-p">TAILLE:</p>
-                    <?php if ($productDetails['is_small']): ?>
-                        <span class="size-box">S</span>
-                    <?php endif; ?>
-                    <?php if ($productDetails['is_medium']): ?>
-                        <span class="size-box">M</span>
-                    <?php endif; ?>
-                    <?php if ($productDetails['is_large']): ?>
-                        <span class="size-box">L</span>
-                    <?php endif; ?>
-                <!-- quantity -->
-                <!-- buy button -->
+                <?php if ($productDetails['is_small']): ?>
+                    <span class="size-box">S</span>
+                <?php endif; ?>
+                <?php if ($productDetails['is_medium']): ?>
+                    <span class="size-box">M</span>
+                <?php endif; ?>
+                <?php if ($productDetails['is_large']): ?>
+                    <span class="size-box">L</span>
+                <?php endif; ?>
+                <div class="buy-container">
+                    <p>QTY</p>
+                    <form method="POST">
+                        <div class="quantity">
+                            <button class="quantity-button" type="submit" name="action" value="decrement">-</button>
+                            <span><?= htmlspecialchars(str_pad($quantity, 2, '0', STR_PAD_LEFT)) ?></span>
+                            <button class="quantity-button" type="submit" name="action" value="increment">+</button>
+                        </div>
+                    </form>
+                    <button class="buy-button">ACHETER MAINTENANT</button>
+                    <!-- buy button -->
+                </div>
             </div>
         <?php else: ?>
             <p>Product not found.</p>
