@@ -1,6 +1,5 @@
 <?php
 // Initialize quantity
-session_start();
 if (!isset($_SESSION['quantity'])) {
     $_SESSION['quantity'] = 1; // Default quantity
 }

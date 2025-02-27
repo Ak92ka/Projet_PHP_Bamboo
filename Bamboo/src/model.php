@@ -45,6 +45,24 @@ function getProductById($productId) {
     return $result;
 }
 
+// Get user by email
+function getUserByEmail($email) {
+    $database = dbConnect();
+    $statement = $database->prepare("SELECT * FROM users WHERE email = ?");
+    $statement->execute([$email]);
+
+    return $statement->fetch(PDO::FETCH_ASSOC); // Return user details or false if not found
+}
+
+// Create a new user with hashed password
+function createUser($email, $password) {
+    $database = dbConnect();
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // Secure password hashing
+    $statement = $database->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
+
+    return $statement->execute([$email, $hashedPassword]); // Return true on success
+}
+
 
 
 function dbConnect() {
@@ -58,4 +76,4 @@ function dbConnect() {
     }
 }
 
-?>
+

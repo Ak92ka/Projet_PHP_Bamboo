@@ -1,5 +1,8 @@
 <?php
-session_start();
+// Check if session is already started to avoid calling session_start() again
+if (session_status() === PHP_SESSION_NONE) {
+    session_start(); // Start session if not already started
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +22,11 @@ session_start();
 
 <body>
     <div class="header">
-        <i class="fa-solid fa-bars icon-hamburger icon-header"></i>
+        <?php if (isset($_SESSION['email'])): ?>
+            <a href="index.php?action=logout"><i class="fa-solid fa-right-from-bracket icon-hamburger icon-header"></i></a>
+        <?php else: ?>
+            <a href="index.php?action=login"><i class="fa-solid fa-user icon-hamburger icon-header"></i></a>
+        <?php endif; ?>
         <a href="index.php?page=homepage">
             <img class="logo icon-header" src="https://raw.githubusercontent.com/Ak92ka/Projet_PHP_Bamboo/refs/heads/main/Bamboo/photos/logo.webp" alt="Bamboo logo">
         </a>
